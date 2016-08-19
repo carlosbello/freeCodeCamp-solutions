@@ -4,6 +4,8 @@ This a simple solution to the exercise from https://www.freecodecamp.com/challen
 
 This code is base on the _Freelancer_ template from https://github.com/BlackrockDigital/startbootstrap-freelancer/tree/master but some tweeks and simplified as much as possible to adapt it for hosting at [Codepen](http://codepen.io)
 
+The result can be seen at https://carlosbello.github.io/freeCodeCamp-solutions/challenges/build-a-personal-portfolio-webpage
+
 ## Setup project
 
 ```
