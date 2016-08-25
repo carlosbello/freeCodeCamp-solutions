@@ -1,28 +1,17 @@
 'use strict';
 
-var TWITTER_SHARE_URL = 'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=';
+var TWITTER_SHARE_URL = '//twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=';
+var QUOTE_SERVICE_URL = '//quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1';
 
 function updateQuote(response) {
-  if (response) {
-    $('#quote-content').text(response.quoteText);
-    $('#quote-author').text(response.quoteAuthor || 'Unknown');
-    $('#tweet-quote').attr('href', TWITTER_SHARE_URL + encodeURIComponent(response.quoteText));
-  }
+  var quote = response.shift();
+  $('#quote-content').html(quote.content);
+  $('#quote-author').text(quote.title || 'Unknown');
+  $('#tweet-quote').attr('href', TWITTER_SHARE_URL + encodeURIComponent(quote.content));
 }
 
 function getQuote() {
-  $.ajax({
-    url: 'http://api.forismatic.com/api/1.0/',
-    dataType: 'jsonp',
-    jsonp: 'jsonp',
-    jsonpCallback: 'updateQuote',
-    data: {
-      method: 'getQuote',
-      key: 457653,
-      format: 'jsonp',
-      lang: 'en'
-    }
-  });
+  $.getJSON(QUOTE_SERVICE_URL, updateQuote);
 }
 
 $(function () {
