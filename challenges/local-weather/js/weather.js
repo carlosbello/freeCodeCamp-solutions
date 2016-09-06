@@ -89,7 +89,7 @@ function removeNoFlexMessage() {
 function loadWeatherInfo() {
   requestClientLocation()
     .done(showWeatherForLocation)
-    .fail(alert);
+    .fail(window.alert.bind(window));
 }
 
 $(function () {
