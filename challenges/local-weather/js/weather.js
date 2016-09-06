@@ -3,6 +3,7 @@ var system = {
   'metric': { symbol: ' &deg; C', changeText: 'C&rarr;F' },
   'fahrenheit': { symbol: ' &deg; F', changeText: 'F&rarr;C' }
 };
+var lastKnownLocation;
 
 function requestClientLocation() {
   var result = $.Deferred();
@@ -21,7 +22,26 @@ function requestClientLocation() {
   return result.promise();
 }
 
+function requestLocationByClientIp() {
+  var result = $.Deferred();
+  $.getJSON('http://ipinfo.io/json', function (ipinfo) {
+    if (ipinfo && ipinfo.loc) {
+      var latLon = ipinfo.loc.split(',');
+      result.resolve({
+        latitude: latLon[0],
+        longitude: latLon[1]
+      });
+    } else {
+      result.reject(':( Sorry but the ip location failed');
+    }
+  }).fail(function () {
+    result.reject('Ip location service failed');
+  });
+  return result.promise();
+}
+
 function showWeatherForLocation(coords) {
+  lastKnownLocation = coords;
   $.getJSON('http://api.openweathermap.org/data/2.5/weather',
     {
       lat: coords.latitude,
@@ -61,7 +81,7 @@ function showCityInfo(coords) {
 function changeUnits() {
   units = units === 'metric' ? 'fahrenheit' : 'metric';
   $('#change').html(system[units].changeText);
-  loadWeatherInfo();
+  showWeatherForLocation(lastKnownLocation);
 }
 
 function isFlexboxSupported() {
@@ -89,7 +109,12 @@ function removeNoFlexMessage() {
 function loadWeatherInfo() {
   requestClientLocation()
     .done(showWeatherForLocation)
-    .fail(window.alert.bind(window));
+    .fail(function (err) {
+      console.log(err);
+      requestLocationByClientIp()
+          .done(showWeatherForLocation)
+          .fail(window.alert.bind(window))
+    });
 }
 
 $(function () {
