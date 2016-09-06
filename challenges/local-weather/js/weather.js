@@ -1,11 +1,8 @@
-/*
-TODO: Implement
--1.-Get current location---------------------------
--2.-Query https://openweathermap.org/current#geo---
-3. Switch between Celsius and Fahrenheit
-4. Show different icons or background depending on the weather
-*/
 var units = 'metric';
+var system = {
+  'metric': { symbol: ' &deg; C', changeText: 'C&rarr;F' },
+  'fahrenheit': { symbol: ' &deg; F', changeText: 'F&rarr;C' }
+};
 
 function requestClientLocation() {
   var result = $.Deferred();
@@ -34,9 +31,12 @@ function showWeatherForLocation(coords) {
     },
     function (result) {
       $('#place').text($('#place').text() || (result.name + ', ' + result.sys.country));
-      $('#temperture').text(result.main.temp);
-      $('#description').text(result.weather[0].main);
-      $('#image').attr('src', 'http://openweathermap.org/img/w/' + result.weather[0].icon + '.png');
+      $('#temperture').html(Math.round(result.main.temp) + system[units].symbol);
+      $('#min').html(Math.round(result.main.temp_min) + system[units].symbol);
+      $('#max').html(Math.round(result.main.temp_max) + system[units].symbol);
+      $('#main').text(result.weather[0].main);
+      $('#description').text(result.weather[0].description);
+      $('#image').attr('class', 'wi wi-owm-' + result.weather[0].id);
     }
   );
   showCityInfo(coords);
@@ -50,7 +50,7 @@ function showCityInfo(coords) {
       username: 'carlosbello'
     },
     function (result) {
-      if (result.geonames) {
+      if (result.geonames && result.geonames.length) {
         var address = result.geonames[0];
         $('#place').text((address.adminName1 || address.name) + ', ' + address.countryCode);
       }
@@ -58,8 +58,44 @@ function showCityInfo(coords) {
   );
 }
 
-$(function () {
+function changeUnits() {
+  units = units === 'metric' ? 'fahrenheit' : 'metric';
+  $('#change').html(system[units].changeText);
+  loadWeatherInfo();
+}
+
+function isFlexboxSupported() {
+  var c;
+  var f = "flex";
+  var wf = "-webkit-" + f;
+  var nf = "no-flex";
+  var e = document.createElement('b');
+  try {
+    e.style.display = wf;
+    e.style.display = f;
+    c = (e.style.display == f || e.style.display == wf) ? f : nf;
+  } catch(e) {
+    c = nf;
+  }
+  document.documentElement.className += ' ' + c;
+  return c !== nf;
+}
+
+function removeNoFlexMessage() {
+  $('.no-flex').removeClass('no-flex');
+  loadWeatherInfo();
+}
+
+function loadWeatherInfo() {
   requestClientLocation()
     .done(showWeatherForLocation)
     .fail(alert);
+}
+
+$(function () {
+  $('.no-flex-message a').click(removeNoFlexMessage);
+  $('#change').click(changeUnits);
+  if (isFlexboxSupported()) {
+    loadWeatherInfo();
+  }
 });

@@ -2,27 +2,77 @@ html, body {
   height: 100%;
 }
 
-.container {
+body {
+  font-family: 'Merriweather', serif;
   display: flex;
-  flex-wrap: wrap;
-  height: 100%;
-  background-color: gray;
+  justify-content: center;
   align-items: center;
 }
 
+.container {
+  flex-wrap: wrap;
+  align-items: center;
+  height: 640px;
+  width: 360px;
+  background-color: #f4e1c1;
+  color: #009788;
+}
+
 .cell {
-  flex: 0 0 50%;
-  background-color: red;
+  position: relative;
+  background-color: #f4e1c1;
+  color: #009788;
+  float: left;
   text-align: center;
+  width: 180px;
+  height: 160px;
+  font-size: 1.8em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.weather-left-col {
-  background-color: gray;
+.cell:nth-child(even) {
+  background-color: #009788;
+  color: #f4e1c1;
 }
 
-@media (min-width: 641px) {
-  body {
-    padding-left: 25%;
-    padding-right: 25%;
-  }
+.label {
+  font-size: 0.5em;
+  text-align: left;
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  text-transform: capitalize;
+}
+
+#change {
+  font-size: 0.5em;
+  text-align: right;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  color: #313131;
+  text-decoration: none;
+}
+
+#image {
+  font-size: 2em;
+}
+
+.no-flex .container{
+  display: none;
+}
+
+.no-flex-message {
+  margin: 24px;
+  padding: 24px;
+  display: none;
+  background-color: #f4e1c1;
+  color: #009788;
+}
+
+.no-flex .no-flex-message {
+  display: block;
 }

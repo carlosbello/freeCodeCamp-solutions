@@ -8,6 +8,8 @@
     <title>FreeCodeCamp: Show the Local Weather</title>
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+    <link href="//fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+    <link rel="stylesheet" href="//erikflowers.github.io/weather-icons/css/weather-icons.css">
     <link rel="stylesheet" href="css/weather.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -19,30 +21,39 @@
   </head>
   <body>
     <div class="container">
-        <div class="cell weather-left-col">
-          <span id="place"></span>
-        </div>
-        <div class="cell">
-          <span id="temperture"></span>
-        </div>
-        <div class="cell weather-left-col">
-          <span id="description"></span>
-        </div>
-        <div class="cell">
-          <img id="image"></img>
-        </div>
-        <div class="cell weather-left-col">
-          Cel 3 1
-        </div>
-        <div class="cell">
-          Cel 3 2
-        </div>
-        <div class="cell weather-left-col">
-          Cel 4 1
-        </div>
-        <div class="cell">
-          Cel 4 2
-        </div>
+      <div class="cell">
+        <span>Local Weather</span>
+      </div>
+      <div class="cell">
+      </div>
+      <div class="cell">
+        <span id="place" class="label"></span>
+        <span id="main"></span>
+      </div>
+      <div class="cell">
+        <span class="label">Temperture</span>
+        <span id="temperture"></span>
+        <a id="change" href="#" title="Change temperture units">C&rarr;F</a>
+      </div>
+      <div class="cell">
+        <span class="label">Min</span>
+        <span id="min"></span>
+      </div>
+      <div class="cell">
+        <span class="label">Max</span>
+        <span id="max"></span>
+      </div>
+      <div class="cell">
+      </div>
+      <div class="cell">
+        <span id="description" class="label"></span>
+        <i id="image"></i>
+      </div>
+    </div>
+    <div class="no-flex-message">
+      Sorry but your browser seems to not support flexbox and this is a property required to
+      properly display the content of this app. If you think this message is wrong and you want
+      to test this no matter what... <a href="#">click here</a>.
     </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
