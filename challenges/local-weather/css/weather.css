@@ -61,11 +61,11 @@ body {
   font-size: 2em;
 }
 
-.no-flex .container{
+.no-flex .container, .no-http .container {
   display: none;
 }
 
-.no-flex-message {
+.no-flex-message, .no-http-message {
   margin: 24px;
   padding: 24px;
   display: none;
@@ -74,5 +74,9 @@ body {
 }
 
 .no-flex .no-flex-message {
+  display: block;
+}
+
+.no-http .no-http-message {
   display: block;
 }

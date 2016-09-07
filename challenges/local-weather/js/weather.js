@@ -84,7 +84,7 @@ function changeUnits() {
   showWeatherForLocation(lastKnownLocation);
 }
 
-function isFlexboxSupported() {
+function isFlexboxNotSupported() {
   var c;
   var f = "flex";
   var wf = "-webkit-" + f;
@@ -97,8 +97,7 @@ function isFlexboxSupported() {
   } catch(e) {
     c = nf;
   }
-  document.documentElement.className += ' ' + c;
-  return c !== nf;
+  return c === nf;
 }
 
 function removeNoFlexMessage() {
@@ -117,10 +116,35 @@ function loadWeatherInfo() {
     });
 }
 
-$(function () {
+function isRunningOnHttps() {
+  return document.location.protocol === 'https:';
+}
+
+function setupNoHttpMessage() {
+  document.documentElement.className += ' no-http';
+  // We can't programmatically redirect from https to http because the browser can stop this action
+  // (at least in codepen.io) so, we need to delegate this redirection to the user.
+  var httpDestination = document.URL
+    .replace('https://', 'http://')
+    .replace('/fullpage/', '/full/'); // HACK! This is needed for the free version of codepen.io
+  $('.no-http-message a').attr('href', httpDestination);
+}
+
+function setupNoFlexboxMessage() {
+  document.documentElement.className += ' no-flex';
   $('.no-flex-message a').click(removeNoFlexMessage);
-  $('#change').click(changeUnits);
-  if (isFlexboxSupported()) {
-    loadWeatherInfo();
+}
+
+$(function () {
+  if (isRunningOnHttps()) {
+    setupNoHttpMessage();
+    return;
   }
+  if (isFlexboxNotSupported()) {
+    setupNoFlexboxMessage();
+    return;
+  }
+
+  $('#change').click(changeUnits);
+  loadWeatherInfo();
 });
