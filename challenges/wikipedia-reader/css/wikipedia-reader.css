@@ -1,0 +1,13 @@
+li.collection-item span.title {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.card-content button {
+  width: 100%;
+  margin-top: 12px;
+}
+
+#searchResult {
+  display: none;
+}
