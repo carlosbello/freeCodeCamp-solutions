@@ -1,3 +1,5 @@
+'use strict';
+
 var units = 'metric';
 var system = {
   'metric': { symbol: ' &deg; C', changeText: 'C&rarr;F' },
