@@ -4,13 +4,13 @@ This a simple solution to the exercise from https://www.freecodecamp.com/challen
 
 This code is based on the _Freelancer_ template from https://github.com/BlackrockDigital/startbootstrap-freelancer/tree/master but with some tweeks and simplified as much as possible to adapt it for hosting at [Codepen](http://codepen.io)
 
-The result can be seen at https://carlosbello.github.io/freeCodeCamp-solutions/challenges/build-a-personal-portfolio-webpage
+The result can be seen at https://carlosbello.github.io/freeCodeCamp-solutions/challenges/personal-portfolio
 
 ## Setup project
 
 ```
 $ git clone https://github.com/carlosbello/freeCodeCamp-solutions.git
-$ cd freeCodeCamp-solutions/challenges/build-a-personal-portfolio-webpage
+$ cd freeCodeCamp-solutions/challenges/personal-portfolio
 $ npm install
 $ gulp
 ```
