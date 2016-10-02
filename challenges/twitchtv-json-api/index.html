@@ -9,18 +9,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
   <body>
-    <ul id="channelList">
-    </ul>
+    <nav class="row">
+      <div class="nav-wrapper col s12">
+        <a href="#!" class="brand-logo">Twitch streamers</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#" class="filter">Online</a></li>
+          <li><a href="#" class="filter">Offline</a></li>
+          <li><a href="#" class="filter">All</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li><a href="#" class="filter">Online</a></li>
+          <li><a href="#" class="filter">Offline</a></li>
+          <li><a href="#" class="filter">All</a></li>
+      </ul>
+      </div>
+    </nav>
+    <div class="row">
+      <div class="col s12 m8 l6 offset-m2 offset-l3">
+        <ul id="channelList" class="collection z-depth-1">
+        </ul>
+      </div>
+    </div>
 
     <script id="channelTemplate" type="text/template">
-      <li class="collection-item">
-        <img src="${logoUrl}" />
-        <a href="${channelUrl}">${name}</a>
-        <span>${status}</span>
+      <li class="collection-item avatar">
+        <img src="${logoUrl}" class="circle" />
+        <span class="title">${name}</span>
+        <p class="status">${status}</p>
+        <a href="${channelUrl}" target="_blank" class="secondary-content ${disabled}">
+          <i class="material-icons">open_in_new</i>
+        </a>
       </li>
     </script>
 
-    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
     <script src="js/jquery.mockjax.min.js"></script>
     <script src="js/simulate-twichtv-service.js"></script>
