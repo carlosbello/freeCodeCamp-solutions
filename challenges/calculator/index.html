@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="css/calculator.css">
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 0 48 48"
+    version="1"
+    class="center">
+      <defs>
+          <linearGradient id="h">
+              <stop offset="0" stop-opacity="0"/>
+              <stop offset=".5"/>
+              <stop offset="1" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="g">
+              <stop offset="0"/>
+              <stop offset="1" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="f">
+              <stop offset="0" stop-color="#fff"/>
+              <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="e">
+              <stop offset="0" stop-color="#babdb6"/>
+              <stop offset="1" stop-color="#888a85"/>
+          </linearGradient>
+          <linearGradient id="d">
+              <stop offset="0" stop-color="#fff"/>
+              <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="c">
+              <stop offset="0" stop-color="#888a85"/>
+              <stop offset="1" stop-color="#babdb6"/>
+          </linearGradient>
+          <linearGradient id="b">
+              <stop offset="0" stop-color="#fff"/>
+              <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="a">
+              <stop offset="0" stop-color="#2e3436"/>
+              <stop offset="1" stop-color="#555753"/>
+          </linearGradient>
+          <linearGradient xlink:href="#a" id="m" x1="8.125" y1="18.625" x2="8.125" y2="1.562" gradientUnits="userSpaceOnUse"/>
+          <linearGradient xlink:href="#b" id="o" x1="10.375" y1="11.063" x2="10.25" y2="5.621" gradientUnits="userSpaceOnUse" gradientTransform="translate(0 1)"/>
+          <linearGradient xlink:href="#c" id="l" x1="11.579" y1="21.054" x2="35.079" y2="52.564" gradientUnits="userSpaceOnUse"/>
+          <linearGradient xlink:href="#d" id="q" x1="14.498" y1="20.82" x2="15.224" y2="22.249" gradientUnits="userSpaceOnUse"/>
+          <linearGradient xlink:href="#d" id="r" gradientUnits="userSpaceOnUse" x1="14.498" y1="20.82" x2="15.005" y2="21.906" gradientTransform="translate(-6)"/>
+          <radialGradient xlink:href="#e" id="p" cx="15.902" cy="21.732" fx="15.902" fy="21.732" r="3" gradientTransform="matrix(1.9597 0 0 1.65785 -14.976 -13.84)" gradientUnits="userSpaceOnUse"/>
+          <linearGradient xlink:href="#d" id="w" gradientUnits="userSpaceOnUse" x1="14.498" y1="20.82" x2="14.911" y2="22.593" gradientTransform="translate(-1)"/>
+          <linearGradient xlink:href="#d" id="y" gradientUnits="userSpaceOnUse" gradientTransform="translate(-1)" x1="14.498" y1="20.82" x2="17.693" y2="24.906"/>
+          <linearGradient xlink:href="#d" id="z" gradientUnits="userSpaceOnUse" x1="14.498" y1="20.82" x2="15.224" y2="22.249"/>
+          <linearGradient xlink:href="#f" id="n" x1="7.625" y1="4.938" x2="9.188" y2="22.625" gradientUnits="userSpaceOnUse"/>
+          <radialGradient xlink:href="#g" id="i" cx="3" cy="43" fx="3" fy="43" r="2" gradientTransform="matrix(2 0 0 2 -13 -129)" gradientUnits="userSpaceOnUse"/>
+          <radialGradient xlink:href="#g" id="j" gradientUnits="userSpaceOnUse" gradientTransform="matrix(2 0 0 2 35 -43)" cx="3" cy="43" fx="3" fy="43" r="2"/>
+          <linearGradient xlink:href="#h" id="k" x1="11.508" y1="39" x2="11.508" y2="47.016" gradientUnits="userSpaceOnUse"/>
+      </defs>
+      <g opacity=".4" color="#000">
+          <path transform="matrix(-1 0 0 -1.11807 0 -5.55)" style="marker:none" fill="url(#i)" overflow="visible" d="M-7-47h4v8h-4z"/>
+          <path style="marker:none" fill="url(#j)" overflow="visible" d="M41 39h4v8h-4z" transform="matrix(1 0 0 1.11807 0 -5.55)"/>
+          <path style="marker:none" fill="url(#k)" overflow="visible" d="M7 39h34v8H7z" transform="matrix(1 0 0 1.11807 0 -5.55)"/>
+      </g>
+      <rect style="marker:none" width="37" height="36.459" x="5.5" y="8.041" rx="2.875" ry="2.875" color="#000" fill="url(#l)" stroke="#555753" stroke-linecap="round" stroke-miterlimit="6" stroke-dashoffset="1.4" overflow="visible"/>
+      <rect style="marker:none" width="35" height="41" x="6.5" y="2.5" rx="1.924" ry="1.924" opacity=".3" color="#000" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="6" stroke-dashoffset="1.4" overflow="visible"/>
+      <path style="marker:none" d="M42.5 17V4.375A2.869 2.869 0 0 0 39.625 1.5H8.375A2.869 2.869 0 0 0 5.5 4.375V17" color="#000" fill="url(#m)" stroke="#2e3436" stroke-linecap="round" stroke-miterlimit="6" stroke-dashoffset="1.4" overflow="visible"/>
+      <rect style="marker:none" width="32" height="9" x="8" y="7" rx="1.176" ry="1.176" color="#000" fill="#8ae234" overflow="visible"/>
+      <path style="marker:none" d="M41.5 16.51V4.348c0-1.05-.798-1.848-1.847-1.848H8.347C7.298 2.5 6.5 3.298 6.5 4.348V16.51" color="#000" fill="none" stroke="url(#n)" stroke-linecap="square" stroke-miterlimit="6" stroke-dashoffset="1.4" overflow="visible" opacity=".2"/>
+      <path style="marker:none" opacity=".6" color="#000" fill="#fff" overflow="visible" d="M13 9h22v5H13z"/>
+      <path style="marker:none" d="M13 9v5h.5V9.5H35V9H13z" opacity=".3" color="#000" overflow="visible"/>
+      <path style="marker:none" d="M9.188 7C8.536 7 8 7.536 8 8.188v5.03c11.702-4.66 24.206-2.226 32 1.313V8.187C40 7.537 39.464 7 38.812 7H9.189z" opacity=".4" color="#000" fill="url(#o)" overflow="visible"/>
+      <g id="v" color="#000" stroke-linecap="square" stroke-miterlimit="6" stroke-dashoffset="1.4">
+          <rect ry="1.047" rx="1.047" y="19.5" x="13.5" height="4" width="5" style="marker:none" fill="url(#p)" stroke="#555753" overflow="visible"/>
+          <rect ry="0" rx="0" y="20.5" x="14.5" height="2" width="3" style="marker:none" opacity=".4" fill="none" stroke="url(#q)" stroke-linejoin="round" overflow="visible"/>
+      </g>
+      <g id="s" color="#000" stroke-linecap="square" stroke-miterlimit="6" stroke-dashoffset="1.4" data-keycode="127">
+          <rect ry="1.016" rx="1.016" y="19.5" x="7.5" height="4" width="4" style="marker:none" fill="#555753" stroke="#2e3436" overflow="visible"/>
+          <rect ry="0" rx="0" y="20.5" x="8.5" height="2" width="2" style="marker:none" opacity=".3" fill="none" stroke="url(#r)" stroke-linejoin="round" overflow="visible"/>
+      </g>
+      <use xlink:href="#s" id="t" transform="translate(0 6)" width="48" height="48"/>
+      <use xlink:href="#t" id="u" transform="translate(0 6)" width="48" height="48"/>
+      <use xlink:href="#u" transform="translate(0 6)" width="48" height="48" data-key="?"/>
+      <use xlink:href="#v" transform="translate(0 0)" width="48" height="48"  data-key="7"/>
+      <use xlink:href="#v" transform="translate(0 6)" width="48" height="48"  data-key="4"/>
+      <use xlink:href="#v" transform="translate(0 12)" width="48" height="48" data-key="1"/>
+      <use xlink:href="#v" transform="translate(7)" width="48" height="48" data-key="8"/>
+      <use xlink:href="#v" transform="translate(7 6)" width="48" height="48" data-key="5"/>
+      <use xlink:href="#v" transform="translate(7 12)" width="48" height="48" data-key="2"/>
+      <use xlink:href="#v" transform="translate(7 18)" width="48" height="48" data-key="0"/>
+      <use xlink:href="#v" transform="translate(14)" width="48" height="48" data-key="9"/>
+      <use xlink:href="#v" transform="translate(14 12)" width="48" height="48" data-key="3"/>
+      <use xlink:href="#v" transform="translate(14 6)" width="48" height="48" data-key="6"/>
+      <g id="x" transform="translate(22)" color="#000" stroke-linecap="square" stroke-miterlimit="6" stroke-dashoffset="1.4">
+          <rect ry="1.047" rx="1.047" y="19.5" x="12.5" height="4" width="6" style="marker:none" fill="#888a85" stroke="#555753" overflow="visible"/>
+          <rect ry="0" rx="0" y="20.5" x="13.5" height="2" width="4" style="marker:none" opacity=".4" fill="none" stroke="url(#w)" stroke-linejoin="round" overflow="visible"/>
+        </g>
+      <use xlink:href="#x" transform="translate(0 0)" width="48" height="48" data-key="/"/>
+      <use xlink:href="#x" transform="translate(0 6)" width="48" height="48" data-key="*"/>
+      <use xlink:href="#x" transform="translate(0 12)" width="48" height="48" data-key="-"/>
+      <use xlink:href="#x" transform="translate(0 18)" width="48" height="48" data-key="+"/>
+      <use xlink:href="#v" transform="translate(0 18)" width="48" height="48" data-key="."/>
+      <g transform="translate(14 18)" color="#000" stroke-linecap="square" stroke-miterlimit="6" stroke-dashoffset="1.4" data-key="=">
+          <rect style="marker:none" width="5" height="4" x="13.5" y="19.5" rx="1.047" ry="1.047" fill="#888a85" stroke="#555753" overflow="visible"/>
+          <rect style="marker:none" width="3" height="2" x="14.5" y="20.5" rx="0" ry="0" opacity=".4" fill="none" stroke="url(#z)" stroke-linejoin="round" overflow="visible"/>
+        </g>
+      <path style="marker:none" opacity=".3" color="#000" fill="#fcaf3e" overflow="visible" d="M31 4h8v2h-8z"/>
+      <g font-size="2.103" font-weight="700" fill="#545454" font-family="Arial">
+          <path d="M16.5 34h-.436v-.72a2.4 2.4 0 0 1-.564.145v-.173c.114-.016.238-.047.371-.092.134-.046.225-.1.275-.16h.354v1M23.765 33.823V34h-1.53c.017-.067.066-.13.15-.19.082-.06.246-.14.49-.24.197-.08.317-.134.362-.162.06-.04.09-.079.09-.117 0-.043-.027-.075-.08-.098a.543.543 0 0 0-.215-.035.543.543 0 0 0-.218.036.149.149 0 0 0-.093.12l-.435-.019c.026-.105.108-.18.244-.226.137-.046.308-.069.513-.069.224 0 .4.027.53.08.128.053.192.119.192.197a.189.189 0 0 1-.056.129.684.684 0 0 1-.174.127 2.86 2.86 0 0 1-.286.127 5.417 5.417 0 0 0-.262.11.575.575 0 0 0-.089.053h.867M29.276 33.736l.422-.022c.013.047.05.083.109.108a.55.55 0 0 0 .214.037c.09 0 .166-.015.227-.045.062-.03.093-.07.093-.12 0-.049-.03-.087-.089-.115a.5.5 0 0 0-.215-.042c-.056 0-.123.005-.2.014l.047-.155a.773.773 0 0 0 .27-.034c.063-.024.094-.055.094-.095 0-.033-.023-.06-.069-.08a.46.46 0 0 0-.181-.03.483.483 0 0 0-.191.034c-.053.023-.085.056-.097.1l-.402-.03a.335.335 0 0 1 .126-.145.705.705 0 0 1 .236-.085c.102-.02.215-.03.34-.03.214 0 .386.03.516.089.106.049.16.104.16.166 0 .087-.11.157-.328.209.13.012.234.04.312.082.079.043.118.094.118.154 0 .088-.073.162-.219.224a1.406 1.406 0 0 1-.545.092c-.206 0-.377-.026-.512-.077-.136-.052-.215-.12-.236-.204M30.77 27.248l-.423.02c-.01-.037-.037-.066-.08-.084a.445.445 0 0 0-.17-.027.47.47 0 0 0-.234.055c-.063.036-.103.111-.12.226a.877.877 0 0 1 .405-.084c.183 0 .338.03.468.09.13.061.195.14.195.236 0 .101-.068.183-.205.245a1.288 1.288 0 0 1-.526.092c-.23 0-.419-.039-.567-.117a.402.402 0 0 1-.222-.384c0-.183.077-.314.232-.395.154-.08.354-.12.6-.12.173 0 .316.02.43.063.113.042.185.104.217.184m-.99.417c0 .062.033.11.098.144.065.033.14.05.224.05a.44.44 0 0 0 .202-.042.141.141 0 0 0 .08-.135.15.15 0 0 0-.087-.142.466.466 0 0 0-.217-.046.472.472 0 0 0-.213.044c-.058.028-.087.07-.087.127M22.297 27.744l.435-.02c.013.044.05.078.11.103a.556.556 0 0 0 .212.037.506.506 0 0 0 .231-.048c.063-.032.095-.081.095-.147 0-.06-.032-.106-.095-.137a.55.55 0 0 0-.244-.046.759.759 0 0 0-.337.073l-.354-.023.224-.518h1.154v.179h-.823l-.069.169c.098-.022.197-.032.298-.032.194 0 .358.03.493.092.134.062.202.142.202.24 0 .082-.055.155-.163.22-.149.087-.354.131-.617.131-.21 0-.381-.024-.514-.074-.132-.05-.212-.115-.238-.199M16.147 28v-.2h-.932v-.167l.988-.633h.366v.632h.283v.168h-.283v.2h-.422m0-.368v-.34l-.523.34h.523M15.291 21.195v-.177h1.493v.139a1.73 1.73 0 0 0-.376.228c-.128.1-.225.205-.292.316a.587.587 0 0 0-.098.3h-.42c.006-.138.071-.279.193-.422.124-.143.288-.27.493-.384h-.993M22.666 21.463a.65.65 0 0 1-.247-.086c-.051-.036-.076-.076-.076-.12 0-.074.059-.135.177-.184a1.39 1.39 0 0 1 .506-.073c.216 0 .384.025.503.073.12.049.18.11.18.184 0 .046-.027.088-.082.124a.653.653 0 0 1-.232.082.783.783 0 0 1 .288.097c.066.043.1.092.1.148 0 .092-.068.166-.203.224a1.372 1.372 0 0 1-.534.086c-.207 0-.38-.024-.517-.071-.163-.056-.244-.133-.244-.231 0-.054.03-.103.092-.148a.716.716 0 0 1 .289-.105m.09-.192c0 .038.024.068.073.089.05.021.115.032.197.032.083 0 .149-.01.199-.032.05-.022.074-.052.074-.09 0-.036-.025-.064-.074-.085a.482.482 0 0 0-.194-.033c-.084 0-.151.01-.2.033-.05.021-.075.05-.075.086m-.04.426c0 .053.03.094.09.123.063.03.14.045.232.045a.52.52 0 0 0 .224-.043c.059-.028.088-.07.088-.123 0-.046-.03-.084-.09-.112a.532.532 0 0 0-.228-.042.47.47 0 0 0-.24.048c-.05.032-.077.067-.077.104M29.3 21.77l.423-.02c.01.037.037.065.08.083.044.018.102.028.173.028.09 0 .167-.019.23-.055.063-.036.104-.111.121-.225a.904.904 0 0 1-.411.083 1.1 1.1 0 0 1-.465-.09c-.129-.06-.194-.14-.194-.237 0-.1.069-.182.205-.243.138-.063.313-.094.525-.094.23 0 .42.04.568.118.148.078.222.206.222.385a.412.412 0 0 1-.23.394c-.155.08-.356.121-.603.121-.178 0-.322-.02-.432-.062-.11-.041-.18-.103-.211-.186m.987-.417c0-.062-.032-.11-.097-.143a.471.471 0 0 0-.224-.051.434.434 0 0 0-.202.042c-.053.027-.08.073-.08.136a.15.15 0 0 0 .088.142c.058.03.13.045.217.045a.462.462 0 0 0 .211-.043c.058-.03.087-.072.087-.128M23.029 39c.22 0 .393.035.517.103.148.082.222.217.222.406 0 .188-.075.324-.224.406-.123.068-.295.102-.515.102-.222 0-.4-.037-.536-.111-.136-.075-.203-.208-.203-.399 0-.187.074-.322.223-.405.123-.068.295-.102.516-.102m0 .159c-.053 0-.1.007-.142.022a.177.177 0 0 0-.096.079.507.507 0 0 0-.045.25c0 .116.014.196.04.24.027.044.061.073.101.087a.426.426 0 0 0 .142.022c.053 0 .1-.007.141-.022a.18.18 0 0 0 .096-.08.502.502 0 0 0 .045-.248c0-.117-.013-.197-.04-.24a.196.196 0 0 0-.102-.088.401.401 0 0 0-.14-.022"/>
+      </g>
+      <text id="result" x="34.5" y="12.6" clip-path="url(#clip)" text-anchor="end" class="dark">0</text>
+      <clipPath id="clip">
+        <rect x="13.5" y="9.6" width="21.5" height="5"/>
+      </clipPath>
+      <text x="8.3" y="22.3" data-keycode="8" class="dark">&lArr;</text>
+      <text x="37.3" y="22.5" data-key="/">/</text>
+      <text x="37" y="29" data-key="*">*</text>
+      <text x="8.8" y="28.3" data-keycode="46" class="dark">c</text>
+      <text x="8.7" y="40.3" data-key="?" class="dark">?</text>
+      <text x="37" y="34.5" data-key="-">-</text>
+      <text x="36.7" y="40.5" data-key="+">+</text>
+      <text x="29.2" y="40.5" data-keycode="13">=</text>
+      <text x="15.7" y="40" data-key=".">.</text>
+  </svg>
+
+  <script src="js/calculator.js"></script>
+</body>
+</html>
