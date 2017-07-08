@@ -1,0 +1,13 @@
+{
+    "extends": "standard",
+    "rules": {
+        "semi": "off",
+        "comma-dangle": "off",
+        "indent": ["error", 4],
+        "space-before-function-paren": ["error", {
+            "anonymous": "always",
+            "named": "ignore",
+            "asyncArrow": "ignore"
+        }]
+    }        
+}

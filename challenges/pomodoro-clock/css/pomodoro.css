@@ -1,0 +1,74 @@
+h1, div {
+    font-family: Raleway, Helvetica, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+body {
+    display: flex;
+    justify-content: center;
+    
+}
+#container {
+    width: 320px;
+    display: flex;
+    flex-flow: column;
+    align-self: center;
+    border: 2px solid #aaa;
+    padding: 10px 0 20px 0;
+    border-radius: 10px;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+#clock-container {
+    display: flex;
+    justify-content: center;
+}
+#minutes-container {
+    display: block;
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+#seconds-container {
+    margin: 10px;
+    height: 180px;
+    width: 180px;
+    position: absolute;
+}
+#buttons-container {
+    text-align: center;
+    font-size: 2em;
+}
+a, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: #888;
+}
+.config {
+    display: flex;
+    margin-top: 20px;
+    padding: 0 30px;
+    align-items: stretch;
+    height: 40px;
+    justify-content: center;
+}
+.config div {
+    flex: 4 0;
+    line-height: 40px;
+    white-space: nowrap;
+    font-family: Raleway;
+}
+.config button {
+    margin: 0 5px 0 5px;
+    border: 2px solid #aaa;
+    border-radius: 50%;
+    width: 40px;
+    background-color: transparent;
+    box-sizing: border-box;
+}
+.config .number {
+    flex: 2 0;
+    text-align: center;
+}

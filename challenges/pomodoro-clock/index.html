@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FreeCodeCamp: Pomodoro Clock</title>
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/pomodoro.css">
+</head>
+<body>
+  <div id="container">
+    <h1>Pomodoro clock</h1>
+    <div id="clock-container">
+      <div id="minutes-container">
+        <div id="seconds-container">
+        </div>
+      </div>
+    </div>
+    <div id="buttons-container">
+      <a id="play" href="#">&#9658;</a>
+      <a id="stop" href="#">&#9632;</a>
+    </div>
+    <div class="config">
+      <div>Work time</div>
+      <button id="substract-work">-</button>
+      <div id="work-time" class="number">25</div>
+      <button id="add-work">+</button>
+    </div>
+    <div class="config">
+      <div>Rest time</div>
+      <button id="substract-rest">-</button>
+      <div id="rest-time" class="number">5</div>
+      <button id="add-rest">+</button>
+    </div>
+  </div>
+
+  <script src="js/progressbar.js"></script>
+  <script src="js/pomodoro.js"></script>
+</body>
+</html>
