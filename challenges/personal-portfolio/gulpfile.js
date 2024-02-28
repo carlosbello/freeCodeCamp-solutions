@@ -17,8 +17,6 @@ var banner = ['/*!\n',
     ''
 ].join('');
 
-// Default task
-gulp.task('default', ['less', 'minify-css', 'minify-js', 'copy']);
 
 // Less task to compile the less files and add the banner
 gulp.task('less', function() {
@@ -28,18 +26,18 @@ gulp.task('less', function() {
         .pipe(gulp.dest('css'))
         .pipe(browserSync.reload({
             stream: true
-        }))
+        }));
 });
 
 // Minify CSS
-gulp.task('minify-css', ['less'], function() {
+gulp.task('minify-css', function() {
     return gulp.src('css/freelancer.css')
-        .pipe(cleanCSS({ compatibility: 'ie8' }))
+        .pipe(cleanCSS())
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest('css'))
         .pipe(browserSync.reload({
             stream: true
-        }))
+        }));
 });
 
 // Minify JS
@@ -51,19 +49,20 @@ gulp.task('minify-js', function() {
         .pipe(gulp.dest('js'))
         .pipe(browserSync.reload({
             stream: true
-        }))
+        }));
 });
+
 
 // Copy Bootstrap core files from node_modules to vendor directory
 gulp.task('bootstrap', function() {
     return gulp.src(['node_modules/bootstrap/dist/**/*', '!**/npm.js', '!**/bootstrap-theme.*', '!**/*.map'])
-        .pipe(gulp.dest('vendor/bootstrap'))
+        .pipe(gulp.dest('vendor/bootstrap'));
 })
 
 // Copy jQuery core files from node_modules to vendor directory
 gulp.task('jquery', function() {
     return gulp.src(['node_modules/jquery/dist/jquery.js', 'node_modules/jquery/dist/jquery.min.js'])
-        .pipe(gulp.dest('vendor/jquery'))
+        .pipe(gulp.dest('vendor/jquery'));
 })
 
 // Copy Font Awesome core files from node_modules to vendor directory
@@ -76,23 +75,23 @@ gulp.task('fontawesome', function() {
             '!node_modules/font-awesome/*.md',
             '!node_modules/font-awesome/*.json'
         ])
-        .pipe(gulp.dest('vendor/font-awesome'))
+        .pipe(gulp.dest('vendor/font-awesome'));
 })
 
 // Copy all third party dependencies from node_modules to vendor directory
-gulp.task('copy', ['bootstrap', 'jquery', 'fontawesome']);
+gulp.task('copy', gulp.series('bootstrap', 'jquery', 'fontawesome'));
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {
     browserSync.init({
         server: {
-            baseDir: ''
+            baseDir: '.'
         },
     })
 })
 
 // Watch Task that compiles LESS and watches for HTML or JS changes and reloads with browserSync
-gulp.task('dev', ['browserSync', 'less', 'minify-css', 'minify-js'], function() {
+gulp.task('dev', gulp.series('browserSync', 'less', 'minify-css', 'minify-js'), async function() {
     gulp.watch('less/*.less', ['less']);
     gulp.watch('css/*.css', ['minify-css']);
     gulp.watch('js/*.js', ['minify-js']);
@@ -100,3 +99,6 @@ gulp.task('dev', ['browserSync', 'less', 'minify-css', 'minify-js'], function() 
     gulp.watch('*.html', browserSync.reload);
     gulp.watch('js/**/*.js', browserSync.reload);
 });
+
+// Default task
+gulp.task('default', gulp.series('less', 'minify-css', 'minify-js', 'copy'));

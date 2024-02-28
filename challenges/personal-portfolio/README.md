@@ -12,5 +12,5 @@ The result can be seen at https://carlosbello.github.io/freeCodeCamp-solutions/c
 $ git clone https://github.com/carlosbello/freeCodeCamp-solutions.git
 $ cd freeCodeCamp-solutions/challenges/personal-portfolio
 $ npm install
-$ gulp
+$ gulp dev
 ```
